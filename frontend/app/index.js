@@ -4,16 +4,22 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import reset from 'styles/reset'
 
-import Home from './components/Home'
-import ProfileShow from './components/ProfileShow'
-import PostShow from './components/PostShow'
-import PostNew from './components/PostNew'
-import UserLogin from './components/UserLogin'
-import UserNew from './components/UserNew'
+import Home from 'components/Home'
+import ProfileShow from 'components/ProfileShow'
+import PostShow from 'components/PostShow'
+import PostNew from 'components/PostNew'
+import UserLogin from 'components/UserLogin'
+import UserNew from 'components/UserNew'
+import Navbar from 'components/Navbar'
 
 const App = React.createClass({
   render() {
-    return <div> { this.props.children } </div>
+    return (
+      <div>
+        <Navbar />
+        { this.props.children }
+      </div>
+    )
   }
 })
 

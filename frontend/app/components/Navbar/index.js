@@ -6,10 +6,20 @@ import styles from './styles'
 const Navbar = React.createClass({
   render() {
     return (
-      <nav>
-        <div>
-          <h1>LOGO</h1>
-          <span>The unofficial news source for the Phoenix Framework.</span>
+      <nav styleName="navbar">
+        <div styleName="logo-container">
+          <h1 styleName="logo">LOGO</h1>
+          <span styleName="sub-heading">The unofficial news source for the Phoenix Framework.</span>
+        </div>
+        <div styleName="filter-container">
+          <input placeholder="Search" />
+          <select name="Filter">
+            <option value="1">Option</option>
+          </select>
+        </div>
+        <div styleName="login-container">
+          <a href="#">Login</a>
+          <button>Signup</button>
         </div>
       </nav>
     )
