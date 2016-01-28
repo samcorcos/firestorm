@@ -1,6 +1,8 @@
 defmodule Firestorm.AuthController do
   use Firestorm.Web, :controller
-  require Logger
 
-  Logger.debug "AuthController hit!"
+  def test(conn, _params) do
+    conn
+    |> render(Firestorm.AuthView, "show.json")
+  end
 end

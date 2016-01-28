@@ -19,11 +19,9 @@ defmodule Firestorm.Router do
     get "/", PageController, :index
   end
 
-  scope "/auth", ConflagrationBackend do
+  scope "/auth", Firestorm do
     pipe_through :api
 
-    get "/:provider", AuthController, :request
-    get "/:provider/callback", AuthController, :callback
-    post "/identity/callback", AuthController, :callback
+    get "/", AuthController, :test
   end
 end
