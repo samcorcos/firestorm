@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './styles'
 
 const Home = React.createClass({
   render() {
-    return <div> Home </div>
+    return <div className={ styles.test }> Home </div>
   }
 })
 

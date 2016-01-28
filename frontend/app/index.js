@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
+import reset from 'styles/reset'
+
 import Home from './components/Home'
 import ProfileShow from './components/ProfileShow'
 import PostShow from './components/PostShow'
