@@ -38,7 +38,11 @@
     "react": "^0.14.0",
     "react-css-modules": "^3.6.8",
     "react-dom": "^0.14.0",
-    "react-router": "^1.0.0"
+    "react-router": "^1.0.0",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.4",
+    "redux-router": "^1.0.0-beta4",
+    "redux-thunk": "^1.0.0"
   },
   "babel": {
     "presets": [
