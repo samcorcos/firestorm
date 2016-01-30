@@ -19,6 +19,12 @@ defmodule Firestorm.Router do
     get "/", PageController, :index
   end
 
+  scope "/user", Firestorm do
+    pipe_through :api
+
+    get "/me", UserController, :show
+  end
+
   scope "/auth", Firestorm do
     pipe_through :api
 
