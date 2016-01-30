@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import CSSModules from 'react-css-modules'
 import styles from './styles'
 
-const Post = React.createClass({
+export const Post = React.createClass({
   render() {
     return (
       <div styleName="post">

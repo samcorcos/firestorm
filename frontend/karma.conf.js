@@ -72,6 +72,11 @@ module.exports = function(config) {
     concurrency: Infinity,
 
 
+    client: {
+      captureConsole: true
+    },
+
+
     webpack: {
       devtool: 'inline-source-map',
       plugins: [
