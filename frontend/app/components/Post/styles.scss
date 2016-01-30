@@ -1,0 +1,32 @@
+.post {
+  height: 70px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.profile {
+  height: 50px;
+  width: 50px;
+}
+
+.voting {
+  composes: voting from "styles/voting";
+}
+
+.votes {
+  composes: votes from "styles/voting";
+}
+
+.arrow-up {
+  composes: arrow-up from "styles/voting";
+}
+
+.arrow-down {
+  composes: arrow-down from "styles/voting";
+}
+
+.thumbnail {
+  height: 60px;
+  width: 60px;
+}
