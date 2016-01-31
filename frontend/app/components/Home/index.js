@@ -1,28 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { fetchPosts } from 'redux/actions'
 
 import CSSModules from 'react-css-modules'
 import styles from './styles'
 
 import Post from 'components/Post'
 
-// TODO temporary until connected to Phoenix backend
-import { postIndexData } from 'config/seeds'
-
-const Home = () => {
-  let list = postIndexData.map(function(post) {
-    return (
-      <Post
-        author={post.author}
-        key={post.id}
-        upvotes={post.upvotes}
-        thumbnail={post.thumbnail}
-        title={post.title}
-        timestamp={post.timestamp}
-        comments={post.comments}
-      />
-    )
-  })
+const Home = ({ posts, dispatch }) => {
+  let list = posts.map( p => <Post key={p.id} {...p} /> )
+  dispatch(fetchPosts())
   return (
     <div>
       { list }
@@ -30,5 +18,13 @@ const Home = () => {
   )
 }
 
+const mapStateToProps = function(state) {
+  return {
+    posts: state.posts
+  }
+}
+
+// TODO figure out a nice way to curry this later
+
 export { Home }
-export default CSSModules(Home, styles)
+export default connect(mapStateToProps)(CSSModules(Home, styles))

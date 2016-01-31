@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import createBrowserHistory from 'history/lib/createBrowserHistory'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import store from 'redux/store'
+import { Provider } from 'react-redux'
 
 import reset from 'styles/reset'
 
@@ -24,15 +25,17 @@ const App = React.createClass({
   }
 })
 
-ReactDOM.render((
-	<Router history={browserHistory}>
-		<Route path="/" component={App}>
-			<IndexRoute component={Home} />
-			<Route path="profile" component={ProfileShow} />
-			<Route path="post" component={PostShow} />
-			<Route path="new" component={PostNew} />
-			<Route path="login" component={UserLogin} />
-			<Route path="register" component={UserNew} />
-		</Route>
-	</Router>
-), document.getElementById('root'))
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home} />
+        <Route path="profile" component={ProfileShow} />
+        <Route path="post" component={PostShow} />
+        <Route path="new" component={PostNew} />
+        <Route path="login" component={UserLogin} />
+        <Route path="register" component={UserNew} />
+      </Route>
+    </Router>
+  </Provider>
+, document.getElementById('root'))
