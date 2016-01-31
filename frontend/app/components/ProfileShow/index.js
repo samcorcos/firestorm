@@ -1,9 +1,7 @@
 import React from 'react'
 
-const ProfileShow = React.createClass({
-  render() {
-    return <div> ProfileShow </div>
-  }
-})
+const ProfileShow = () => {
+  return <div> ProfileShow </div>
+}
 
 export default ProfileShow

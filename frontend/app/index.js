@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import { Router, Route, IndexRoute } from 'react-router'
 
 import reset from 'styles/reset'
 
@@ -24,7 +25,7 @@ const App = React.createClass({
 })
 
 ReactDOM.render((
-	<Router history={browserHistory}>
+	<Router history={createBrowserHistory()}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Home} />
 			<Route path="profile" component={ProfileShow} />

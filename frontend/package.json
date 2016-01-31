@@ -4,7 +4,8 @@
   "description": "The unofficial news source for the Phoenix Framework.",
   "main": "index.js",
   "scripts": {
-    "test": "wdio",
+    "test-integration": "wdio",
+    "test-unit": "./node_modules/.bin/karma start",
     "start": "node server.js",
     "selenium-start": "selenium-standalone start &>/dev/null &",
     "selenium-install": "selenium-standalone install"
@@ -52,7 +53,7 @@
     "react": "^0.14.7",
     "react-css-modules": "^3.6.8",
     "react-dom": "^0.14.0",
-    "react-router": "^1.0.0",
+    "react-router": "^2.0.0-rc5",
     "react-redux": "^4.0.6",
     "redux": "^3.0.4",
     "redux-router": "^1.0.0-beta4",
