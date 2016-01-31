@@ -9,7 +9,7 @@ import Post from 'components/Post'
 // TODO temporary until connected to Phoenix backend
 import { postIndexData } from 'config/seeds'
 
-export const Home = () => {
+const Home = () => {
   let list = postIndexData.map(function(post) {
     return (
       <Post
@@ -30,4 +30,5 @@ export const Home = () => {
   )
 }
 
+export { Home }
 export default CSSModules(Home, styles)

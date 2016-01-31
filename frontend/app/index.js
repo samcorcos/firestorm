@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import createBrowserHistory from 'history/lib/createBrowserHistory'
-import { Router, Route, IndexRoute } from 'react-router'
-import { browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import reset from 'styles/reset'
 

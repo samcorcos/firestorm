@@ -11,7 +11,7 @@ describe("Home unit tests", function() {
   it("should render Home component", function() {
     const renderer = TestUtils.createRenderer()
     renderer.render( <Home /> )
-    const home = renderer.getRenderOutput()
-    assert(home.type === "div")
+    const output = renderer.getRenderOutput()
+    assert(output.type === "div")
   })
 })
