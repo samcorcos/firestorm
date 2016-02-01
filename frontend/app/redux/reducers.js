@@ -9,4 +9,4 @@ export const posts = function(state=[], action) {
   }
 }
 
-export default combineReducers({posts})
+export default combineReducers({ posts })

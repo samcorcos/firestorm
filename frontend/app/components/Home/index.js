@@ -18,7 +18,7 @@ const Home = ({ posts, dispatch }) => {
   )
 }
 
-const mapStateToProps = function(state) {
+const select = function(state) {
   return {
     posts: state.posts
   }
@@ -27,4 +27,4 @@ const mapStateToProps = function(state) {
 // TODO figure out a nice way to curry this later
 
 export { Home }
-export default connect(mapStateToProps)(CSSModules(Home, styles))
+export default connect(select)(CSSModules(Home, styles))
