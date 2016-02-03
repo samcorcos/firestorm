@@ -47,7 +47,8 @@ defmodule Firestorm.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
-      {:ueberauth_identity, "~> 0.2"}
+      {:ueberauth_identity, "~> 0.2"},
+      {:guardian, "~> 0.9.0"}
     ]
   end
 

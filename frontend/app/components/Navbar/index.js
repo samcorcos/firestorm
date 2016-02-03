@@ -3,7 +3,7 @@ import React from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles'
 
-const Navbar = () => {
+const Navbar = ({ currentUser }) => {
   return (
     <nav styleName="navbar">
       <div styleName="logo-container">

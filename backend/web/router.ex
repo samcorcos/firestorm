@@ -11,23 +11,39 @@ defmodule Firestorm.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.LoadResource
   end
 
-  scope "/", Firestorm do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-  end
-
-  scope "/user", Firestorm do
+  scope "/api", ReactPhoenix do
     pipe_through :api
 
-    get "/me", UserController, :show
+    IO.puts "hit API"
+
+    # post "/register", RegistrationController, :create
+    get "/current_user", UserController, :current_user
+
+    # post "/login", SessionController, :create
   end
 
-  scope "/auth", Firestorm do
-    pipe_through :api
-
-    get "/", AuthController, :test
-  end
 end
+
+#
+# pipeline :api do
+#    plug :accepts, ["json"]
+#    plug Guardian.Plug.VerifyHeader
+#    plug Guardian.Plug.LoadResource
+#  end
+#
+#  # Other scopes may use custom stacks.
+#  scope "/api", ReactPhoenix do
+#    pipe_through :api
+#
+#    scope "/v1", V1, as: :v1 do
+#      resources "/users", UserController, except: [:new, :edit]
+#      post "/register", RegistrationController, :create
+#      get "/current_user", UserController, :current_user
+#
+#      post "/login", SessionController, :create
+#    end
+#  end

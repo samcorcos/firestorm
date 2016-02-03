@@ -32,3 +32,12 @@ config :ueberauth, Ueberauth,
   providers: [
     identity: {Ueberauth.Strategy.Identity, []}
   ]
+
+config :joken, config_module: Guardian.JWT
+
+config :guardian, Guardian,
+  issuer: "Firestorm",
+  ttl: { 30, :days },
+  verify_issuer: true,
+  secret_key: "24wesniq3p4nwepsofewankfnois3fleububflasfubiub4u4",
+  serializer: Firestorm.GuardianSerializer
